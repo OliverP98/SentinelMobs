@@ -1,0 +1,190 @@
+#The Queen Skills
+
+SummonBee:
+  Cooldown: 30
+  Skills:
+  - message{m="<mob.name><&co> Arise, my workers! &dProtecc &aand &cAttacc!"} @PlayersInRadius{r=25}
+  - summon{mob=WorkerBee;amount=4;noise=4} @self
+  - Delay 20
+  - summon{mob=WorkerBee;amount=4;noise=4} @self
+BeeSting:
+  Cooldown: 10
+  Skills:
+  - potion{type=poison;lvl=1;duration=4} @target
+  - potion{type=weakness;lvl=1;duration=5} @target
+SummonBee60:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> Arise again, my workers! &6It is not over yet!"} @PlayersInRadius{r=25}
+  - summon{mob=WorkerBee;amount=4;noise=4} @self
+  - Delay 30
+  - summon{mob=WorkerBee;amount=3;noise=4} @self
+  - Delay 30
+  - summon{mob=WorkerBee;amount=3;noise=4} @self
+SummonBee15:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> Arise, my workers! &cInto the Valley of Death!"} @PlayersInRadius{r=25}
+  - summon{mob=WorkerBee;amount=5;noise=4} @self
+  - Delay 30
+  - summon{mob=WorkerBee;amount=4;noise=4} @self
+  - Delay 30
+  - summon{mob=WorkerBee;amount=4;noise=4} @self
+
+#RessurectionMan Skills:
+
+ResMan80:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> Come forth and &7Rise from the Ashes!"} @PlayersInRadius{r=25}
+  - summon{mob=ResManZVillagerStoneSword;amount=1;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerStoneSword;amount=1;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerStoneSword;amount=1;noise=4} @PlayersInRadius{r=6}
+ResMan50:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> My soldiers, &2Come to my aid!"} @PlayersInRadius{r=25}
+  - summon{mob=ResManZVillagerWoodenSword;amount=5;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerWoodenSword;amount=5;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerWoodenSword;amount=5;noise=4} @PlayersInRadius{r=6}
+ResMan25:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> &6This isn't the end! &cFight for your lives again!"} @PlayersInRadius{r=25}
+  - summon{mob=ResManZVillagerWoodenSword;amount=5;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerWoodenSword;amount=5;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerWoodenSword;amount=5;noise=4} @PlayersInRadius{r=6}
+ResMan10:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> Arise, my Minions! &cInto the Valley of Death!"} @PlayersInRadius{r=25}
+  - summon{mob=ResManZVillagerWoodenSword;amount=4;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerWoodenSword;amount=8;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=ResManZVillagerWoodenSword;amount=8;noise=4} @PlayersInRadius{r=6}
+ResManRegen:
+  Cooldown: 10
+  Skills:
+  - potion{type=healing;lvl=3;duration=10} @self
+
+#Cursed Skills for the Cursed Boss Mobs
+
+CursedBlind:
+  Cooldown: 100
+  Skills:
+  - potion{type=blindness;lvl=1;duration=3} @target
+CursedArrow:
+  Cooldown: 50
+  Skills:
+  - arrowvolley{a=25,s=20,v=1-,f=50,rd=200} @target
+CursedLightning:
+  Cooldown: 200
+  Skills:
+  - lightning @PlayersInRadius{r=10} ~onTimer:100
+CursedIgnite:
+  Cooldown: 160
+  Skills:
+  - ignite{ticks=80} @target ~onAttack
+CursedLeap:
+  Cooldown: 160
+  Skills:
+  - leap{velocity=200} @target
+  - Delay 20
+  - jump{velocity=200} @target
+  - effect:explosion @self
+  - damage{amount=20} @EntitiesInRadius{r=5}
+CursedWeakness:
+  Cooldown: 160
+  Skills:
+  - potion{type=weakness,lvl=1,duration=5} @target
+CursedSpeed:
+  Cooldown: 160
+  Skills:
+  - setspeed{speed=2;type=walking}
+  - delay 40
+  - setspeed{speed=1;type=walking}
+CursedAbsoption:
+  Cooldown: 200
+  Skills:
+  - potion{type=absorption;duration=120;level=2} @self
+CursedMonk50:
+  Cooldown: 2000
+  Skills:
+  - summon{mob=CursedMonk;amount=5;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=CursedMonk;amount=3;noise=4} @PlayersInRadius{r=6}
+  - Delay 10
+  - summon{mob=CursedMonk;amount=2;noise=4} @PlayersInRadius{r=6}
+CursedAOE:
+  Cooldown: 250
+  Conditions:
+  - targetwithin 20
+  - offgcd true
+  Skills:
+  - GCD{t=80}
+  - message{msg="<mob.name>&e begins casting a spell."} @PIR{r=15}
+  - potion{type=SLOW;d=80;level=7;}
+  - delay 40
+  - message{m="<target.name>&e combusts."} @PIR{r=20}
+  - effect:particles{p=reddust;hs=10;vs=1;a=1000;s=0.01;}
+  - effect:particles{p=flame;hs=10;vs=1;a=1000;s=0.01;} @self
+  - effect:sound{s=entity.ghast.fireball;v=1;p=1;}
+  - damage{a=3;ignorearmor=true;} @PIR{r=10}
+  - ignite{d=60;} @PIR{r=10}
+CursedGravity:
+  Cooldown: 500
+  Conditions:
+  - targetwithin 15
+  - offgcd true
+  Skills:
+  - GCD{t=80}
+  - message{msg="<mob.name>&e begins casting a spell."} @PIR{r=15}
+  - potion{type=SLOW;d=80;level=7;}
+  - delay 40
+  - message{m="<target.name>&e rises chaotically into the air."} @PIR{r=20}
+  - effect:sound{s=entity.wither.death;v=2;p=1;} @self
+  - effect:particles{p=cloud:1:10:a=1000;s=0.01;}
+  - throw{velocity=0;velocityY=10}
+CursedEggThrowing:
+  Skills:
+  - shoot{type=egg;velocity=5;damage=4;knockback=2}
+  - delay 10
+  - shoot{type=egg;velocity=5;damage=4;knockback=2}
+CursedPlayerThrow:
+  Cooldown: 200
+  Skills:
+  - effect:explosion @Self
+  - damage{amount=4} @PlayersInRadius{r=6}
+  - throw{velocity=15;velocityY=5} @PlayersInRadius{r=6}
+CursedSpeed:
+  Cooldown: 160
+  Skills:
+  - potion{type=speed,lvl=2,duration=30} @self
+
+
+### BREAD Missile ###
+
+BreadMissle:
+  Skills:
+  - missile{ontick=BreadMissle_Tick;onhit=BreadMissle_HIT;velocity=4;interval=1;HorizontalRadius=1.5;VertialRadius=1.5;Inertia=0.75}
+BreadMissle_Tick:
+  Skills:
+  - effect:particles{particle=item;material=bread;amount=1} @origin
+BreadMissle_HIT:
+  Skills:
+  - effect:particles{particle=lava;amount=50;hSpread=1;vSpread=1}
+  - effect:sound{s=entity.generic.explode;v=1;pitch=0}
+  - damage{amount=6;ignorearmor=false}
+
+### Cursed Cake Mines ###
+
+CursedCakeMine:
+  Skills:
+    - setblock{material=tnt;md=1} @selflocation

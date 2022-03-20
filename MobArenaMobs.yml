@@ -1,0 +1,426 @@
+#The Queen Bee - Used in the Honey/Gold cave low spawn chance
+
+QueenBee:
+  Type: Bee
+  Display: '&aThe Queen Bee'
+  Health: 75
+  Damage: 4
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 50
+    KnockbackResistance: 0.5
+    MaxCombatDistance: 20
+    MovementSpeed: 0.5
+    ShowHealth: true
+    Anger: 100
+  Skills:
+  - skill{s=SummonBee} @Self 0.1
+  - skill{s=BeeSting} @self 1
+  - skill{s=SummonBee15} @self <10% 1
+  - skill{s=SummonBee60} @self  <60% 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - randomfly
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  KillMessages:
+  - '<target.name> was defeated by The Queen Bee!'
+
+#The Queen Bee - Worker Bees
+
+WorkerBee:
+  Type: Bee
+  Display: '&aWorker Bee'
+  Health: 10
+  Damage: 1
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 50
+    KnockbackResistance: 0.5
+    MaxCombatDistance: 20
+    MovementSpeed: 0.5
+    ShowHealth: true
+    Anger: 100
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - randomfly
+  - gotoparent 15
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+#Resurrection Man - Boss
+
+ResurrectionMan:
+  Type: Zombie
+  Display: '&4Resurrection Man'
+  Health: 150
+  Damage: 4.5
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    KnockbackResistance: 0.7
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - ResManHelmet HEAD
+  - ResManChestplate CHEST
+  - ResManLeggings LEGS
+  - ResManBoots FEET
+  - ResManWeapon HAND
+  Skills:
+  - skill{s=ResMan80} @self <80% 1
+  - skill{s=ResMan50} @self <50% 1
+  - skill{s=ResMan25} @self <25% 1
+  - skill{s=ResMan10} @self <10% 1
+  - skill{s=ResManRegen} @self <30% 0.2
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&4Resurrection Man'
+    Range: 80
+    Color: brown
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was defeated by the Resurrection Man!'
+
+#Resurrection Man - Minions
+
+ResManZVillagerStoneSword:
+  Type: Zombie_Villager
+  Display: '&cResurrected'
+  Health: 10
+  Damage: 1.5
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 20
+    KnockbackResistance: 0.7
+    MaxCombatDistance: 20
+    MovementSpeed: 0.32
+    ShowHealth: true
+  Equipment:
+  - ResManHelmet HEAD
+  - ResManChestplate CHEST
+  - ResManLeggings LEGS
+  - ResManBoots FEET
+  - ResManStoneSword HAND
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - gotoparent 5
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - players
+  - attacker
+ResManZVillagerWoodenAxe:
+  Type: Zombie_Villager
+  Display: '&cResurrected'
+  Health: 10
+  Damage: 1.5
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 20
+    KnockbackResistance: 0.7
+    MaxCombatDistance: 20
+    MovementSpeed: 0.32
+    ShowHealth: true
+  Equipment:
+  - ResManHelmet HEAD
+  - ResManChestplate CHEST
+  - ResManLeggings LEGS
+  - ResManBoots FEET
+  - ResManWoodAxe HAND
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - gotoparent 5
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - players
+  - attacker
+ResManZVillagerWoodenSword:
+  Type: Zombie_Villager
+  Display: '&cResurrected'
+  Health: 10
+  Damage: 1.5
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 20
+    KnockbackResistance: 0.7
+    MaxCombatDistance: 20
+    MovementSpeed: 0.32
+    ShowHealth: true
+  Equipment:
+  - ResManHelmet HEAD
+  - ResManChestplate CHEST
+  - ResManLeggings LEGS
+  - ResManBoots FEET
+  - ResManWoodSword HAND
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - gotoparent 5
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - players
+  - attacker
+
+#Cursed Boss Mobs
+
+CursedKnight:
+  Type: WITHER_SKELETON
+  Display: '&4Cursed Knight'
+  Health: 250
+  Damage: 6
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - PROJECTILE 0.75
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.25
+    ShowHealth: true
+  Equipment:
+  - CursedKnightHelmet HEAD
+  - CursedKnightChestplate CHEST
+  - CursedKnightLeggings LEGS
+  - CursedKnightBoots FEET
+  - CursedKnightSword HAND
+  Skills:
+  - skill{s=CursedBlind} @self 0.5
+  - skill{s=CursedArrow} @self <80% 1
+  - skill{s=CursedLightning} @self <60% 1
+  - skill{s=CursedIgnite} @self <50% 0.5
+  - skill{s=CursedLeap} @self <40% 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&4Cursed Knight'
+    Range: 80
+    Color: Orange
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was defeated by The Cursed Knight!'
+CursedBishop:
+  Type: WITHER_SKELETON
+  Display: '&4Cursed Bishop'
+  Health: 200
+  Damage: 6
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.25
+    ShowHealth: true
+  Equipment:
+  - CursedBishopHelmet HEAD
+  - CursedBishopChestplate CHEST
+  - CursedBishopLeggings LEGS
+  - CursedBishopBoots FEET
+  - CursedBishopWeapon HAND
+  Skills:
+  - skill{s=CursedBlind} @self 0.75
+  - skill{s=CursedAbsoption} @self <50% 1
+  - skill{s=CursedMonk50} @self <30% 1
+  - skill{s=CursedAOE} @self 0.5
+  - skill{s=CursedGravity} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&4Cursed Bishop'
+    Range: 80
+    Color: Orange
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was defeated by The Cursed Bishop!'
+CursedBaker:
+  Type: Zombie
+  Display: '&4Cursed Baker'
+  Health: 220
+  Damage: 0.5
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - PROJECTILE 0.75
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.25
+    ShowHealth: true
+    KnockbackResistance: 0.5
+  Equipment:
+  - CursedBakerLeggings FEET
+  - CursedBakerWeapon HAND
+  Skills:
+  - skill{s=BreadMissle} @target ~onTimer:100
+  - skill{s=CursedBlind} @self <80% 1
+  - skill{s=CursedCakeMine} @self ~onTimer:200
+  - skill{s=CursedEggThrowing} @self <40% 0.5
+  - skill{s=CursedPlayerThrow} @self <50% 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&4Cursed Baker'
+    Range: 80
+    Color: Orange
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> had their soul completely devoured'
+
+CursedGuard:
+  Type: WITHER_SKELETON
+  Display: '&4Cursed Guard'
+  Health: 300
+  Damage: 4
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - PROJECTILE 0.75
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.25
+    ShowHealth: true
+  Equipment:
+  - CursedGuardSword HAND
+  - CursedGuardShield OffHAND
+  - CursedGuardHelmet HEAD
+  - CursedGuardChestplate CHEST
+  - CursedGuardLeggings LEGS
+  - CursedGuardBoots FEET
+  Skills:
+  - skill{s=CursedBlind} @self 0.5
+  - skill{s=CursedArrow} @self <80% 1
+  - skill{s=CursedSpeed} @self <60% 1
+  - skill{s=CursedWeakness} @self <40% 0.5
+  - skill{s=CursedLeap} @self <80% 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&4Cursed Guard'
+    Range: 80
+    Color: WHITE
+    Style: segmented_12
+  KillMessages:
+  - '<target.name><&sq>s soul was feasted upon by Soul Eater'
+
+#Cursed Boss Minions
+
+CursedMonk:
+  Type: Zombie
+  Display: '&4Cursed Monk'
+  Health: 100
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.35
+    ShowHealth: true
+  Equipment:
+  - CursedBishopHelmet HEAD
+  - CursedBishopChestplate CHEST
+  - CursedBishopLeggings LEGS
+  - CursedBishopBoots FEET
+  - CursedBishopWeapon HAND
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players

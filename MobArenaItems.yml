@@ -1,0 +1,186 @@
+# Resurrection Man Items
+
+ResManWeapon:
+  Id: IRON_SHOVEL
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - SHARPNESS:1
+  - KNOCKBACK:2
+  Hide:
+  - ENCHANTS
+  Attributes:
+    AttackSpeed: 1.5
+ResManHelmet:
+  Id: LEATHER_HELMET
+  Options:
+    Color: BLACK
+ResManChestplate:
+  Id: LEATHER_CHESTPLATE
+  Options:
+    Color: BLACK
+ResManLeggings:
+  Id: LEATHER_LEGGINGS
+  Options:
+    Color: BLACK
+ResManBoots:
+  Id: LEATHER_Boots
+  Options:
+    Color: BLACK
+
+# Resurrection Man Miniboss Weapons
+
+ResManStoneSword:
+  Id: STONE_SWORD
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - SHARPNESS:1
+  Hide:
+  - ENCHANTS
+ResManWoodAxe:
+  Id: Wooden_Axe
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - SHARPNESS:1
+  Hide:
+  - ENCHANTS
+ResManWoodSword:
+  Id: Wooden_Sword
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - SHARPNESS:1
+  Hide:
+  - ENCHANTS
+
+# Cursed Boss Mob Items
+
+CursedKnightSword:
+  Id: IRON_SWORD
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - KNOCKBACK:2
+  Hide:
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 1.5
+CursedKnightHelmet:
+  Id: CHAINMAIL_HELMET
+  Enchantments:
+  - THORNS:1
+CursedKnightChestplate:
+  Id: CHAINMAIL_CHESTPLATE
+  Enchantments:
+  - THORNS:1
+CursedKnightLeggings:
+  Id: CHAINMAIL_LEGGINGS
+  Enchantments:
+  - PROJECTILE_PROTECTION:1
+CursedKnightBoots:
+  Id: CHAINMAIL_BOOTS
+  Enchantments:
+  - FEATHER_FALLING:1
+
+CursedBishopWeapon:
+  Id: TRIDENT
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - KNOCKBACK:2
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 1.5
+CursedBishopHelmet:
+  Id: LEATHER_HELMET
+  Options:
+    Color: WHITE
+  Enchantments:
+  - PROTECTION:1
+CursedBishopChestplate:
+  Id: LEATHER_CHESTPLATE
+  Options:
+    Color: WHITE
+  Enchantments:
+  - PROTECTION:1
+CursedBishopLeggings:
+  Id: LEATHER_LEGGINGS
+  Options:
+    Color: WHITE
+  Enchantments:
+  - PROTECTION:1
+CursedBishopBoots:
+  Id: LEATHER_Boots
+  Options:
+    Color: BLACK
+    Enchantments:
+    - FEATHER_FALLING:1
+
+CursedBakerWeapon:
+  Id: pumpkin_pie
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - KNOCKBACK:4
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 1.5
+CursedBakerLeggings:
+  Id: LEATHER_LEGGINGS
+  Options:
+    Color: WHITE
+  Enchantments:
+  - PROTECTION:4
+
+CursedGuardSword:
+  Id: IRON_SWORD
+  Data: 0
+  Amount: 1
+  Display: ''
+  Enchantments:
+  - KNOCKBACK:4
+  Hide:
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 1.5
+CursedGuardShield:
+  Id: SHIELD
+  Data: 0
+  Amount: 1
+  Display: ''
+  Attributes:
+    OffHand:
+      Armor: 4
+CursedGuardHelmet:
+  Id: IRON_HELMET
+  Enchantments:
+  - PROTECTION:1
+CursedGuardChestplate:
+  Id: IRON_CHESTPLATE
+  Enchantments:
+  - PROTECTION:1
+CursedGuardLeggings:
+  Id: IRON_LEGGINGS
+  Enchantments:
+  - PROJECTILE_PROTECTION:1
+CursedGuardBoots:
+  Id: IRON_BOOTS
+  Enchantments:
+  - FEATHER_FALLING:1
