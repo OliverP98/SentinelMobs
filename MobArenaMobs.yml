@@ -247,7 +247,8 @@ CursedKnight:
     Color: Orange
     Style: segmented_12
   KillMessages:
-  - '<target.name> was defeated by The Cursed Knight!'
+  - '<target.name> was defeated by The Cursed Knight!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+
 CursedBishop:
   Type: WITHER_SKELETON
   Display: '&4Cursed Bishop'
@@ -294,7 +295,7 @@ CursedBishop:
     Color: Orange
     Style: segmented_12
   KillMessages:
-  - '<target.name> was defeated by The Cursed Bishop!'
+  - '<target.name> was defeated by The Cursed Bishop!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
 CursedBaker:
   Type: Zombie
   Display: '&4Cursed Baker'
@@ -339,7 +340,7 @@ CursedBaker:
     Color: Orange
     Style: segmented_12
   KillMessages:
-  - '<target.name> had their soul completely devoured'
+  - '<target.name> had their soul completely devoured' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
 
 CursedGuard:
   Type: WITHER_SKELETON
@@ -387,7 +388,7 @@ CursedGuard:
     Color: WHITE
     Style: segmented_12
   KillMessages:
-  - '<target.name><&sq>s soul was feasted upon by Soul Eater'
+  - '<target.name><&sq>s soul was feasted upon by Soul Eater' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
 
 #Cursed Boss Minions
 
