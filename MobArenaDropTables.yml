@@ -1,6 +1,9 @@
 # For more information, check out the plugin manual or join us on Discord:
 # http://www.mythicmobs.net
-#  
+#
+# This file and mob drops can be looked at last when balancing the mob arenas weapons and items
+# no need to involve anything in here at the moment and if we do add anything it will be done on the last pass
+#
 
 SkeletonKingDrops:
   Conditions:
