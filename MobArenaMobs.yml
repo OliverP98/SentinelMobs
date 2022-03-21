@@ -431,3 +431,37 @@ CursedMonk:
   - clear
   - attacker
   - players
+  
+#Great Yeti
+
+GreatYeti:
+  Type: Polar_Bear
+  Display: '&fGreat Yeti'
+  Health: 200
+  Damage: 6
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 100
+    KnockbackResistance: 0.5
+    MaxCombatDistance: 20
+    MovementSpeed: 1
+    ShowHealth: true
+    Anger: 100
+  Skills:
+  - skill{s=SummonBee} @Self 0.1
+  - skill{s=BeeSting} @self 1
+  - skill{s=SummonBee15} @self <10% 1
+  - skill{s=SummonBee60} @self  <60% 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - randomfly
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  KillMessages:
+  - '<target.name> was frozen to a crisp by the Great Yeti!'
