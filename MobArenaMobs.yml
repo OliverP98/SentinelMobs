@@ -450,10 +450,13 @@ GreatYeti:
     ShowHealth: true
     Anger: 100
   Skills:
-  - skill{s=SummonBee} @Self 0.1
-  - skill{s=BeeSting} @self 1
-  - skill{s=SummonBee15} @self <10% 1
-  - skill{s=SummonBee60} @self  <60% 1
+  - freeze{ticks=60} @trigger ~onAttack
+  - lunge{velocity=15;velocityY=10} @Self
+  #below to be edited once yeti minoins are created
+  #- skill{s=SummonBee} @Self 0.1
+  #- skill{s=BeeSting} @self 1
+  #- skill{s=SummonBee15} @self <10% 1
+  #- skill{s=SummonBee60} @self  <60% 1
   AIGoalSelectors:
   - clear
   - meleeattack
