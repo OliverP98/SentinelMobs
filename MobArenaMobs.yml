@@ -1,8 +1,6 @@
 # SentinelCraft: Mob Arena Custom Mobs
 
 #Look at current mobs and see if they need revisions.
-#
-
 
 #The Queen Bee - Used in the Honey/Gold cave low spawn chance
 
@@ -38,6 +36,7 @@ QueenBee:
   KillMessages:
   - '<target.name> was defeated by The Queen Bee!'
 
+
 #The Queen Bee - Worker Bees
 
 WorkerBee:
@@ -65,6 +64,7 @@ WorkerBee:
   - clear
   - attacker
   - players
+
 
 #Resurrection Man - Boss
 
@@ -111,6 +111,7 @@ ResurrectionMan:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by the Resurrection Man!'
+
 
 #Resurrection Man - Minions
 
@@ -205,6 +206,7 @@ ResManZVillagerWoodenSword:
   - players
   - attacker
 
+
 #Cursed Boss Mobs
 
 CursedKnight:
@@ -254,7 +256,8 @@ CursedKnight:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by The Cursed Knight!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
-
+  
+  
 CursedBishop:
   Type: WITHER_SKELETON
   Display: '&4Cursed Bishop'
@@ -302,6 +305,7 @@ CursedBishop:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by The Cursed Bishop!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  
 CursedBaker:
   Type: Zombie
   Display: '&4Cursed Baker'
@@ -396,6 +400,7 @@ CursedGuard:
   KillMessages:
   - '<target.name><&sq>s soul was feasted upon by Soul Eater' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
 
+
 #Cursed Boss Minions
 
 CursedMonk:
@@ -432,6 +437,9 @@ CursedMonk:
   - attacker
   - players
   
+
+#Great Yeti
+
 #Great Yeti
 
 GreatYeti:
@@ -452,6 +460,7 @@ GreatYeti:
   Skills:
   - freeze{ticks=60} @trigger ~onAttack
   - lunge{velocity=15;velocityY=10} @Self
+  - message{m="<&b><caster.name><&r> <&c>has been defeated by<&r> <&a><trigger.name><&r><&c>!"} @PIR{r=20} ~onDeath
   #below to be edited once yeti minoins are created
   #- skill{s=SummonBee} @Self 0.1
   #- skill{s=BeeSting} @self 1
@@ -461,10 +470,11 @@ GreatYeti:
   - clear
   - meleeattack
   - movetowardstarget
-  - randomfly
+  - randomstroll
   AITargetSelectors:
   - clear
   - attacker
   - players
   KillMessages:
   - '<target.name> was frozen to a crisp by the Great Yeti!'
+  - '<target.name> was was ripped apart by the Great Yeti!'
