@@ -65,6 +65,7 @@ WorkerBee:
   - attacker
   - players
 
+# END OF BEE MOB SET
 
 #Resurrection Man - Boss
 
@@ -111,6 +112,8 @@ ResurrectionMan:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by the Resurrection Man!'
+  - '<target.name> was sent to the abode of doom by the Resurrection Man!'
+  - '<target.name> has been de-surrected by the Resurrection Man!'
 
 
 #Resurrection Man - Minions
@@ -206,6 +209,7 @@ ResManZVillagerWoodenSword:
   - players
   - attacker
 
+# END RES MAN MOB SET
 
 #Cursed Boss Mobs
 
@@ -256,7 +260,8 @@ CursedKnight:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by The Cursed Knight!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
-  
+  - '<target.name> could not face the wrath of The Cursed Knight!'
+  - '<target.name> has been cursed to death by The Cursed Knight!'
   
 CursedBishop:
   Type: WITHER_SKELETON
@@ -305,6 +310,8 @@ CursedBishop:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by The Cursed Bishop!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - 'The Cursed Bishop checkmated <target.name>.'
+  - '<target.name> has been doomed forever by The Cursed Bishop!'
   
 CursedBaker:
   Type: Zombie
@@ -351,7 +358,9 @@ CursedBaker:
     Style: segmented_12
   KillMessages:
   - '<target.name> had their soul completely devoured' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
-
+  - '<target.name> had their brains baked by The Cursed Baker!'
+  - '<target.name> couldn't face The Cursed Baker!'
+  
 CursedGuard:
   Type: WITHER_SKELETON
   Display: '&4Cursed Guard'
