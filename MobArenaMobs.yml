@@ -440,8 +440,6 @@ CursedMonk:
 
 #Great Yeti
 
-#Great Yeti
-
 GreatYeti:
   Type: Polar_Bear
   Display: '&fGreat Yeti'
@@ -454,9 +452,8 @@ GreatYeti:
     FollowRange: 100
     KnockbackResistance: 0.5
     MaxCombatDistance: 20
-    MovementSpeed: 1
+    MovementSpeed: 0.3
     ShowHealth: true
-    Anger: 100
   Skills:
   - freeze{ticks=60} @trigger ~onAttack
   - lunge{velocity=15;velocityY=10} @Self
@@ -478,3 +475,41 @@ GreatYeti:
   KillMessages:
   - '<target.name> was frozen to a crisp by the Great Yeti!'
   - '<target.name> was was ripped apart by the Great Yeti!'
+
+#Great Yeti Boss Guards
+
+YetiGuard:
+  Type: Zombie
+  Display: '&7Yeti Guard'
+  Health: 12
+  Damage: 1
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 1
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 100
+    KnockbackResistance: 0.2
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: false
+  Equipment:
+  - YetiGuardPolarBearFace HEAD
+  - YetiGuardChestplate CHEST
+  - YetiGuardLeggings LEGS
+  - YetiGuardBoots FEET
+  - YetiGuard HAND
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - randomstroll
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  KillMessages:
+  - '<target.name> was pummeled to death by a Yeti Guard!'
