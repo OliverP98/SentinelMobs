@@ -10,3 +10,5 @@ This is still a work in progress and there is much to do and a lot which needs r
 
 
 When editing make sure everything is named correctly and from now do start adding comments to everything with thinking as this will help with working together and editing it to something that is workable. Also make sure everything has sensible names which are unique enough, short names could confuse things.
+
+thorn
