@@ -431,3 +431,61 @@ CursedMonk:
   - clear
   - attacker
   - players
+
+CursedButcher:
+  Type: Husk
+  Display: '&6Cursed Butcher'
+  Health: 350
+  Damage: 4
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 40
+    MovementSpeed: 0.55
+    ShowHealth: true
+  Equipment:
+  -
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+CursedButcherMinion:
+  Type:
+  Display:
+  Health: 70
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.35
+    ShowHealth: true
+  Equipment:
+  -
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
