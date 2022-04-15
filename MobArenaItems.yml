@@ -260,6 +260,17 @@ BMinion45Boots:
     Id: CHAINMAIL_BOOTS
     Enchantments:
     - PROTECTION:1
+BMinion45Sword:
+    Id: DIAMOND_AXE
+    Data: 0
+    Amount: 1
+    Enchantments:
+    - SHARPNESS:3
+    Hide:
+    - ENCHANTS
+    Attributes:
+      MainHand:
+        AttackSpeed: 3
 
 BMinion20Helmet:
   Id: GOLD_HELMET
@@ -277,3 +288,22 @@ BMinion20Boots:
     Id: GOLD_BOOTS
     Enchantments:
     - PROTECTION:1
+BMinion20Sword:
+    Id: DIAMOND_AXE
+    Data: 0
+    Amount: 1
+    Enchantments:
+    - SHARPNESS:3
+    Hide:
+    - ENCHANTS
+    Attributes:
+      MainHand:
+        AttackSpeed: 3
+BMinion20Shield:
+    Id: SHIELD
+    Data: 0
+    Amount: 1
+    Display: ''
+    Attributes:
+      OffHand:
+        Armor: 4

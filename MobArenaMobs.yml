@@ -394,7 +394,8 @@ CursedGuard:
     Color: WHITE
     Style: segmented_12
   KillMessages:
-  - '<target.name><&sq>s soul was feasted upon by Soul Eater' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - '<target.name><&sq>s attack was foiled by a Cursed Guard' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - '<target.name> was made an example of by a Cursed Guard'
 
 CursedMonk:
   Type: Zombie
@@ -452,7 +453,10 @@ CursedButcher:
   - CursedButcherHelmet HEAD
   - CursedButcherBoots FEET
   Skills:
-    -
+  - skill{s=CursedBlind} @self 0.5
+  - skill{s=ButcherMinion70} @self <70% 1
+  - skill{s=ButcherMinion45} @self <45% 1
+  - skill{s=ButcherMinion20} @self <20% 1
   AIGoalSelectors:
   - clear
   - meleeattack
@@ -462,11 +466,15 @@ CursedButcher:
   - clear
   - attacker
   - players
+  KillMessages:
+  - '<target.name> was cleaved by the Cursed Butcher!'
+  - '<target.name><&sq>s sorry corpse was put on display by the Cursed Butcher!'
+  - '<target.name> realised that the Cursed Butcher was very good at his job!'
 
 ButcherMinion70:
   Type: Zombie
-  Display:
-  Health: 50
+  Display: '&aASDA'
+  Health: 30
   Damage: 1
   DamageModifiers:
   - FIRE 0
@@ -498,8 +506,8 @@ ButcherMinion70:
   - players
 ButcherMinion45:
   Type: Zombie
-  Display:
-  Health: 50
+  Display: '&gMorrisons'
+  Health: 40
   Damage: 1
   DamageModifiers:
   - FIRE 0
@@ -515,6 +523,7 @@ ButcherMinion45:
     MovementSpeed: 0.35
     ShowHealth: true
   Equipment:
+  - BMinion45Sword HAND
   - BMinion45Helmet HEAD
   - BMinion45Chest CHEST
   - BMinion45Leggings LEGS
@@ -530,7 +539,7 @@ ButcherMinion45:
   - players
 ButcherMinion20:
   Type: Zombie
-  Display:
+  Display: '&cTESCO'
   Health: 50
   Damage: 1
   DamageModifiers:
@@ -547,6 +556,8 @@ ButcherMinion20:
     MovementSpeed: 0.35
     ShowHealth: true
   Equipment:
+  - BMinion20Sword HAND
+  - BMinion20Shield OffHAND
   - BMinion20Helmet HEAD
   - BMinion20Chest CHEST
   - BMinion20Leggings LEGS

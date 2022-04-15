@@ -194,3 +194,39 @@ BreadMissle_HIT:
 CursedCakeMine:
   Skills:
     - setblock{material=tnt;md=1} @selflocation
+
+### Cursed Butcher Skills ###
+
+CursedBlind:
+    Cooldown: 200
+    Skills:
+    - potion{type=blindness;lvl=1;duration=4} @target
+FoodSteal:
+  
+ButcherMinion70:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> &e*Sinister stomach rumbling*"} @PlayersInRadius{r=25}
+  - summon{mob=ButcherMinion70;amount=2;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion70;amount=2;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion70;amount=1;noise=4} @self
+ButcherMinion45:
+  Cooldown: 1900
+  Skills:
+  - message{m="<mob.name><&co> &6*I'm getting really hungry; finish this quickly!"} @PlayersInRadius{r=25}
+  - summon{mob=ButcherMinion45;amount=3;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion45;amount=3;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion45;amount=2;noise=4} @self
+ButcherMinion20:
+  Cooldown: 1800
+  Skills:
+  - message{m="<mob.name><&co> &cYou made me miss my lunch break! I'm gonna turn you into sirloin steak!"} @PlayersInRadius{r=25}
+  -summon{mob=ButcherMinion20;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion20;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion20;amount=5;noise=4} @self
