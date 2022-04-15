@@ -453,6 +453,7 @@ CursedButcher:
   - CursedButcherHelmet HEAD
   - CursedButcherBoots FEET
   Skills:
+  - skill{s=StarvationPotion} @self 0.5
   - skill{s=CursedBlind} @self 0.5
   - skill{s=ButcherMinion70} @self <70% 1
   - skill{s=ButcherMinion45} @self <45% 1
@@ -495,6 +496,8 @@ ButcherMinion70:
   - BMinion70Chest CHES
   - BMinion70Leggings LEGS
   - BMinion70Boots FEET
+  Skills:
+  - skill{s=FeeblePotion}
   AIGoalSelectors:
   - clear
   - meleeattack

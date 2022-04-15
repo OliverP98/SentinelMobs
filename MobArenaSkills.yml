@@ -198,11 +198,15 @@ CursedCakeMine:
 ### Cursed Butcher Skills ###
 
 CursedBlind:
-    Cooldown: 200
-    Skills:
-    - potion{type=blindness;lvl=1;duration=4} @target
+  Cooldown: 200
+  Skills:
+  - potion{type=blindness;lvl=1;duration=4} @target
 FoodSteal:
-  
+  Cooldown: 600
+  Skills:
+  - takeitem{i=STEAK:a=8} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_CHICKEN} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_MUTTON} @NearestPlayer{r=25}
 ButcherMinion70:
   Cooldown: 2000
   Skills:
@@ -230,3 +234,15 @@ ButcherMinion20:
   - summon{mob=ButcherMinion20;amount=5;noise=4} @self
   - Delay 10
   - summon{mob=ButcherMinion20;amount=5;noise=4} @self
+
+## Butcher Minion Skill ##
+
+FeeblePotion:
+  Cooldown: 50
+  Skills:
+  - shootpotion{type=WEAKNESS;duration=2400;level=2;v=7} @target
+
+StarvationPotion:
+  Cooldown: 200
+  Skills:
+  - shootpotion{type=HUNGER;duration=1200;level=3;v=6} @target
