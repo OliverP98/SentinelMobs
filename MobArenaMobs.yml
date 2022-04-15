@@ -396,8 +396,6 @@ CursedGuard:
   KillMessages:
   - '<target.name><&sq>s soul was feasted upon by Soul Eater' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
 
-#Cursed Boss Minions
-
 CursedMonk:
   Type: Zombie
   Display: '&4Cursed Monk'
@@ -450,7 +448,11 @@ CursedButcher:
     MovementSpeed: 0.55
     ShowHealth: true
   Equipment:
-  -
+  - CursedButcherAxe HAND
+  - CursedButcherHelmet HEAD
+  - CursedButcherBoots FEET
+  Skills:
+    -
   AIGoalSelectors:
   - clear
   - meleeattack
@@ -460,10 +462,11 @@ CursedButcher:
   - clear
   - attacker
   - players
-CursedButcherMinion:
-  Type:
+
+ButcherMinion70:
+  Type: Zombie
   Display:
-  Health: 70
+  Health: 50
   Damage: 1
   DamageModifiers:
   - FIRE 0
@@ -479,7 +482,75 @@ CursedButcherMinion:
     MovementSpeed: 0.35
     ShowHealth: true
   Equipment:
-  -
+  - BMinion70Potion HAND
+  - BMinion70Helmet HEAD
+  - BMinion70Chest CHES
+  - BMinion70Leggings LEGS
+  - BMinion70Boots FEET
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+ButcherMinion45:
+  Type: Zombie
+  Display:
+  Health: 50
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.35
+    ShowHealth: true
+  Equipment:
+  - BMinion45Helmet HEAD
+  - BMinion45Chest CHEST
+  - BMinion45Leggings LEGS
+  - BMinion45Boots FEET
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+ButcherMinion20:
+  Type: Zombie
+  Display:
+  Health: 50
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.35
+    ShowHealth: true
+  Equipment:
+  - BMinion20Helmet HEAD
+  - BMinion20Chest CHEST
+  - BMinion20Leggings LEGS
+  - BMinion20Boots FEET
   AIGoalSelectors:
   - clear
   - meleeattack
