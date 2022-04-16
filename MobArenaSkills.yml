@@ -196,7 +196,10 @@ CursedCakeMine:
     - setblock{material=tnt;md=1} @selflocation
 
 ### Cursed Butcher Skills ###
-
+ButcherMount:
+  Cooldown: 1200
+  Skills:
+  - mount{type=ButcherMount}
 CursedBlind:
   Cooldown: 200
   Skills:
@@ -235,7 +238,7 @@ ButcherMinion20:
   - Delay 10
   - summon{mob=ButcherMinion20;amount=5;noise=4} @self
 
-## Butcher Minion Skill ##
+## Butcher Potion Skills ##
 
 FeeblePotion:
   Cooldown: 50

@@ -446,13 +446,14 @@ CursedButcher:
     Collidable: true
     Despawn: false
     FollowRange: 40
-    MovementSpeed: 0.55
+    MovementSpeed: 0.25
     ShowHealth: true
   Equipment:
   - CursedButcherAxe HAND
   - CursedButcherHelmet HEAD
   - CursedButcherBoots FEET
   Skills:
+  - skill{s=ButcherMount} @self 0.5
   - skill{s=StarvationPotion} @self 0.5
   - skill{s=CursedBlind} @self 0.5
   - skill{s=ButcherMinion70} @self <70% 1
@@ -488,7 +489,7 @@ ButcherMinion70:
     Despawn: false
     FollowRange: 30
     MaxCombatDistance: 20
-    MovementSpeed: 0.35
+    MovementSpeed: 0.2
     ShowHealth: true
   Equipment:
   - BMinion70Potion HAND
@@ -523,7 +524,7 @@ ButcherMinion45:
     Despawn: false
     FollowRange: 30
     MaxCombatDistance: 20
-    MovementSpeed: 0.35
+    MovementSpeed: 0.2
     ShowHealth: true
   Equipment:
   - BMinion45Sword HAND
@@ -556,7 +557,7 @@ ButcherMinion20:
     Despawn: false
     FollowRange: 30
     MaxCombatDistance: 20
-    MovementSpeed: 0.35
+    MovementSpeed: 0.2
     ShowHealth: true
   Equipment:
   - BMinion20Sword HAND
@@ -574,3 +575,26 @@ ButcherMinion20:
   - clear
   - attacker
   - players
+
+ButcherMount:
+    Type: Zombie_Horse
+    Health: 50
+    Damage: 2
+    DamageModifiers:
+    - FIRE 0
+    - HOT_FLOOR 0
+    - FIRE_TICK 0
+    - MAGIC 0
+    Options:
+      Collidable: true
+      Despawn: false
+      FollowRange: 30
+      MaxCombatDistance: 20
+      MovementSpeed: 0.3
+      ShowHealth: false
+    AIGoalSelectors:
+    - clear
+    - breakdoors
+    AITargetSelectors:
+    - clear
+    - attacker
