@@ -232,7 +232,7 @@ ButcherMinion20:
   Cooldown: 1800
   Skills:
   - message{m="<mob.name><&co> &cYou made me miss my lunch break! I'm gonna turn you into sirloin steak!"} @PlayersInRadius{r=25}
-  -summon{mob=ButcherMinion20;amount=5;noise=4} @self
+  - summon{mob=ButcherMinion20;amount=5;noise=4} @self
   - Delay 10
   - summon{mob=ButcherMinion20;amount=5;noise=4} @self
   - Delay 10
@@ -249,3 +249,26 @@ StarvationPotion:
   Cooldown: 200
   Skills:
   - shootpotion{type=HUNGER;duration=1200;level=3;v=6} @target
+
+# Piper Skills #
+
+PiperRats:
+  Cooldown: 600
+  Skills:
+  - summon{mob=PiperRats;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=PiperRats;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=PiperRats;amount=5;noise=4} @self
+
+PiperKids:
+  Cooldown: 500
+  Skills:
+  - summon{mob=PiperRats;amount=4;noise=4} @self
+  - Delay 10
+  - summon{mob=PiperRats;amount=4;noise=4} @self
+
+MusicParalysis:
+  Cooldown: 1500
+  Skills:
+  - freeze {t=150} @trigger ~onAttack

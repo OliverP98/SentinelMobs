@@ -307,3 +307,27 @@ BMinion20Shield:
     Attributes:
       OffHand:
         Armor: 4
+
+# Piper Armour #
+
+PiperHelmet:
+  Id: GOLD_HELMET
+  Enchantments:
+  - PROTECTION:2
+PiperChest:
+  Id: GOLD_CHESTPLATE
+  Enchantments:
+  - PROTECTION:2
+PiperLeggings:
+  Id: GOLD_LEGGINGS
+  Enchantments:
+  - PROTECTION:2
+PiperBoots:
+  Id: GOLD_BOOTS
+  Enchantments:
+  - PROTECTION:2
+PiperFlute:
+  Id: BLAZE_ROD
+  Enchantments:
+  - KNOCKBACK:3
+  - SHARPNESS:5
