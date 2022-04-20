@@ -272,3 +272,41 @@ MusicParalysis:
   Cooldown: 1500
   Skills:
   - freeze {t=150} @trigger ~onAttack
+
+# Dragon Warrior #
+
+KunaiBarrage:
+  Cooldown: 400
+  Skills:
+    - shoot{t=TRIDENT;v=10;damage=15;knockback=1;accuracy=3;oh=BurstKunai;bounce=true}
+    - Delay 30
+    - arrowvolley{a=50;s=200;v=10;f=30;rd=200} @target
+
+BurstKunai:
+  Cooldown: 300
+  Skills:
+  - missile{ot=BurstKunai_TICK;oh=BurstKunai_HIT;v=4;i=1;hR=1;vR=1;in=0.75}
+
+BurstKunai_TICK:
+  Skills:
+  - effect:particles{p=flame;a=5} @origin
+
+BurstKunai_HIT:
+  Skills:
+  - effect:particles{p=lava;a=50;hS=1;vS=1}
+  - effect:sound{s=entity.generic.explode;v=1;p=0}
+  - damage{a=1337;i=false}
+
+SwapPos:
+  Cooldown: 900
+  Skills:
+  - message{m="<mob.name><&co> &gToo sneaky for you!"} @PlayersInRadius{r=25}
+  - swap @target
+  - effect:smoke @target ~onTimer:10
+  - effect:smoke{direction=2} @self ~onAttack
+
+PoLunge:
+  Cooldown: 500
+  Skills:
+  - message{m="<mob.name><&co> &gFists of fury!"} @PlayersInRadius{r=15}
+  - lunge{velocity=15;velocityY=10} @Self

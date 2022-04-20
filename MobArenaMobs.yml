@@ -443,6 +443,8 @@ CursedMonk:
   - attacker
   - players
 
+# Cursed Piper #
+
 CursedButcher:
   Type: Husk
   Display: '&6Cursed Butcher'
@@ -656,6 +658,9 @@ CursedPiper:
   - clear
   - attacker
   - players
+  KillMessages:
+  - '<target.name> was serenaded by the Piper's blissful tunes!'
+  - '<target.name> fell under the Piper's magic spell!'
 
 PiperRats:
   Type: Endermite
@@ -672,7 +677,7 @@ PiperRats:
     Despawn: false
     FollowRange: 50
     MaxCombatDistance: 20
-    MovementSpeed: 0.2
+    MovementSpeed: 0.6
     ShowHealth: true
   AIGoalSelectors:
   - clear
@@ -710,3 +715,50 @@ PiperKids:
   - clear
   - attacker
   - players
+
+# Dragon Warrior (Boss) #
+
+DragonWarrior:
+  Type: Panda
+  Display: '&cThe Dragon Warrior'
+  Health: 400
+  Damage: 5
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 1
+  - STARVATION 1
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.3
+    ShowHealth: true
+  Skills:
+  - skill{s=KunaiBarrage} @self <10% 1
+  - skill{s=BurstKunai} @target ~onTimer:100 <20% 1
+  - skill{s=SwapPos} @self <50% 1
+  - skill{s=PoLunge} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&gThe Dragon Warrior'
+    Range: 80
+    Color: YELLOW
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was turned into a dumpling and eaten by the Dragon Warrior!'
+  - '<target.name> was sat on and squashed by the Dragon Warrior!'
+  - '<target.name> was banished to the spirit realm by the Dragon Warrior!'
