@@ -278,9 +278,9 @@ MusicParalysis:
 KunaiBarrage:
   Cooldown: 400
   Skills:
-    - shoot{t=TRIDENT;v=10;damage=15;knockback=1;accuracy=3;oh=BurstKunai;bounce=true}
-    - Delay 30
-    - arrowvolley{a=50;s=200;v=10;f=30;rd=200} @target
+  - shoot{t=TRIDENT;v=10;damage=15;knockback=1;accuracy=3;oh=BurstKunai;bounce=true}
+  - Delay 30
+  - arrowvolley{a=50;s=200;v=10;f=30;rd=200} @target
 
 BurstKunai:
   Cooldown: 300
@@ -310,3 +310,38 @@ PoLunge:
   Skills:
   - message{m="<mob.name><&co> &gFists of fury!"} @PlayersInRadius{r=15}
   - lunge{velocity=15;velocityY=10} @Self
+
+# Zeus Skills (Boss) #
+
+Lightningbolt:
+  Cooldown: 600
+  Skills:
+  - arrowvolley{a=100;s=5;v=25;f=60;rd=200} @target
+
+LightningStrike:
+  Cooldown: 600
+  Skills:
+  - lightning{d=6} @EntitiesInRadius{r=20}
+  - effect:smoke @target ~onTimer:10
+
+LightningParalysis:
+  Cooldown: 500
+  Skills:
+  - lightning{d=3} @EntitiesInRadius{r=20}
+  - freeze {t=100} @EntitiesInRadius{r=20}
+
+StaticPull:
+  Cooldown: 300
+  Skills:
+  - effect:glow{color=AQUA;duration=100}
+  - Delay 80
+  - forcepull{spread=5} @target
+  - Delay 10
+  - ignite{ticks=100} @trigger ~onAttack
+
+StaticLevitate:
+  Cooldown: 800
+  Skills:
+  - potion{type=LEVITATION;d=100;level=4}
+  - Delay 100
+  - damage{amount=4}

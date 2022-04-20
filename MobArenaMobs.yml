@@ -762,3 +762,52 @@ DragonWarrior:
   - '<target.name> was turned into a dumpling and eaten by the Dragon Warrior!'
   - '<target.name> was sat on and squashed by the Dragon Warrior!'
   - '<target.name> was banished to the spirit realm by the Dragon Warrior!'
+
+Zeus:
+  Type: Iron_Golem
+  Display: '&bZeus'
+  Health: 350
+  Damage: 3
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 1
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - ZeusHelmet HEAD
+  - ZeusTrident HAND
+  Skills:
+  - skill{s=Lightningbolt} @self 0.5
+  - skill{s=LightningStrike} @self 0.5
+  - skill{s=LightningParalysis} @self <50% 1
+  - skill{s=StaticPull} @self 0.5
+  - skill{s=StaticLevitate} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&bZeus'
+    Range: 80
+    Color: AQUA
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was zapped by a lightning bolt!'
+  - 'Zeus violently increased the voltage running through <target.name><&sq>s nervous system!'
+  - '<target.name> was kicked out of Mount Olympus!'

@@ -331,3 +331,15 @@ PiperFlute:
   Enchantments:
   - KNOCKBACK:3
   - SHARPNESS:5
+
+# Zeus Items #
+
+ZeusHelmet:
+  Id: DIAMOND_HELMET
+  Enchantments:
+  - PROTECTION:2
+  - THORNS:1
+ZeusTrident:
+  Id: IRON_SWORD
+  Enchantment:
+  - SHARPNESS:2
