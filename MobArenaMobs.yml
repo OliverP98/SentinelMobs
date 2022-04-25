@@ -443,7 +443,7 @@ CursedMonk:
   - attacker
   - players
 
-# Cursed Piper #
+# Cursed Butcher (Boss) #
 
 CursedButcher:
   Type: Husk
@@ -470,6 +470,7 @@ CursedButcher:
   - skill{s=ButcherMount} @self 0.5
   - skill{s=StarvationPotion} @self 0.5
   - skill{s=CursedBlind} @self 0.5
+  - skill{s=FoodSteal} @self 0.5
   - skill{s=ButcherMinion70} @self <70% 1
   - skill{s=ButcherMinion45} @self <45% 1
   - skill{s=ButcherMinion20} @self <20% 1
@@ -763,6 +764,8 @@ DragonWarrior:
   - '<target.name> was sat on and squashed by the Dragon Warrior!'
   - '<target.name> was banished to the spirit realm by the Dragon Warrior!'
 
+# Zeus (Boss)
+
 Zeus:
   Type: Iron_Golem
   Display: '&bZeus'
@@ -804,10 +807,58 @@ Zeus:
   BossBar:
     Enabled: true
     Title: '&bZeus'
-    Range: 80
+    Range: 100
     Color: AQUA
     Style: segmented_12
   KillMessages:
   - '<target.name> was zapped by a lightning bolt!'
   - 'Zeus violently increased the voltage running through <target.name><&sq>s nervous system!'
   - '<target.name> was kicked out of Mount Olympus!'
+
+RumpelBlockSkin:
+  Type: Baby_Zombie
+  Display: '&cRumpel BlockSkin'
+  Health: 350
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - RumpelHelm HEAD
+  - RumpelChestplate CHEST
+  - RumpelLegs LEGS
+  - RumpelBoots FEET
+  - RumpelDagger HAND
+  Skills:
+  - skill{s=TantrumThrow} @self 0.5
+  - skill{s=Pickpocket} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&c'
+    Range: 100
+    Color: AQUA
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> forgot to read Rumpel's fineprint.'
+  - '<target.name> struck a bad deal with RumpelBlockSkin'

@@ -345,3 +345,19 @@ StaticLevitate:
   - potion{type=LEVITATION;d=100;level=4}
   - Delay 100
   - damage{amount=4}
+
+# Rumpel Skills #
+
+TantrumThrow:
+  Cooldown: 200
+  Skills:
+  - effect:explosion @Self
+  - damage{amount=10} @PlayersInRadius{r=5}
+  - throw{velocity=15;velocityY=5} @PlayersInRadius{r=5}
+
+Pickpocket:
+  Cooldown: 300
+  Skills:
+  - takeitem{i=STEAK;a=8} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_CHICKEN;a=3} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_MUTTON;a=3} @NearestPlayer{r=25}

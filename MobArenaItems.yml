@@ -88,7 +88,7 @@ CursedKnightChestplate:
 CursedKnightLeggings:
   Id: CHAINMAIL_LEGGINGS
   Enchantments:
-  - PROJECTILE_PROTECTION:1
+  - PROTECTION_PROJECTILE:1
 CursedKnightBoots:
   Id: CHAINMAIL_BOOTS
   Enchantments:
@@ -234,7 +234,7 @@ BMinion70Helmet:
 BMinion7070Chest:
   Id: CHAINMAIL_CHESTPLATE
   Enchantments:
-  - PROJECTILE_PROTECTION:3
+  - PROTECTION_PROJECTILE:3
 BMinion70Leggings:
   Id: CHAINMAIL_LEGGINGS
   Enchantments:
@@ -251,7 +251,7 @@ BMinion45Helmet:
 BMinion45Chest:
   Id: CHAINMAIL_CHESTPLATE
   Enchantments:
-  - PROJECTILE_PROTECTION:2
+  - PROTECTION_PROJECTILE:2
 BMinion45Leggings:
   Id: CHAINMAIL_LEGGINGS
   Enchantments:
@@ -331,6 +331,7 @@ PiperFlute:
   Enchantments:
   - KNOCKBACK:3
   - SHARPNESS:5
+  - FIRE_ASPECT:2
 
 # Zeus Items #
 
@@ -343,3 +344,27 @@ ZeusTrident:
   Id: IRON_SWORD
   Enchantment:
   - SHARPNESS:2
+
+# Rumpel Items #
+
+RumpelHelm:
+  Id: GOLD_HELMET
+  Enchantments:
+  - PROTECTION:2
+RumpelChest:
+  Id: GOLD_CHESTPLATE
+  Enchantments:
+  - PROTECTION:2
+RumpelLegs:
+  Id: GOLD_LEGGINGS
+  Enchantments:
+  - PROTECTION:2
+RumpelBoots:
+  Id: GOLD_BOOTS
+  Enchantments:
+  - PROTECTION:2
+  - DEPTH_STRIDER:2
+RumpelDagger:
+  Id: GOLD_SWORD
+  Enchantments:
+  - SWEEPING_EDGE:2
