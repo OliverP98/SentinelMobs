@@ -818,7 +818,7 @@ Zeus:
 RumpelBlockSkin:
   Type: Baby_Zombie
   Display: '&cRumpel BlockSkin'
-  Health: 350
+  Health: 175
   Damage: 1
   DamageModifiers:
   - FIRE 0
@@ -855,10 +855,58 @@ RumpelBlockSkin:
   - players
   BossBar:
     Enabled: true
-    Title: '&c'
+    Title: '&cRumpelBlockSkin'
     Range: 100
     Color: AQUA
     Style: segmented_12
   KillMessages:
   - '<target.name> forgot to read Rumpel's fineprint.'
   - '<target.name> struck a bad deal with RumpelBlockSkin'
+
+SkullCrusher:
+  Type: Vindicator
+  Display: '&gSkull Crusher'
+  Health: 350
+  Damage: 4
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - CrushPick HAND
+  Skills:
+  - skill{s=SuperShockslam} @self 0.5
+  - skill{s=LightningSurge} @self 0.5
+  - skill{s=Cataclysm} @self <75% 1
+  - skill{s=LastResort} @self <20% 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&cSkull Crusher'
+    Range: 100
+    Color: YELLOW
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> had their head lobbed off by the Skull Crusher.'
+  - '<target.name> was shattered by the Skull Crusher.'
+  - '<target.name> thought the Skull Crusher wasn't very strong. He was mistaken.'
+  - '<target.name> suffered a broken nose, and a few others, from the Skull Crusher's mace.'

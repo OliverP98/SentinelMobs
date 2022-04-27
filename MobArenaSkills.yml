@@ -361,3 +361,70 @@ Pickpocket:
   - takeitem{i=STEAK;a=8} @NearestPlayer{r=25}
   - takeitem{i=COOKED_CHICKEN;a=3} @NearestPlayer{r=25}
   - takeitem{i=COOKED_MUTTON;a=3} @NearestPlayer{r=25}
+
+# Skull Crusher (Boss) #
+
+SuperShockslam:
+  Cooldown: 500
+  Skills:
+  - jump{v=10}
+  - Delay 20
+  - throw{velocity=8;velocityY=6} @PIR{r=10}
+  - damage{a=30;i=false} @PIR{r=10}
+  - effect:particles{p=hugeexplode;a=5;vs=0.5;hs=0.5;s=0;y=1} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=0.5} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=1;repeat=7;repeatInterval=2} @Self
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=1} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=3} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=5} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=7} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=9} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=11} @Self
+
+LightningSurge:
+  Cooldown: 200
+  Skills:
+  - lightning{d=10} @target
+  - effect:particles{p=hugeexplode;a=5;vs=0.5;hs=0.5;s=0;y=1} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=0.5} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=1;repeat=7;repeatInterval=2} @Self
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=1} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=3} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=5} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=7} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=9} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=11} @target
+
+Cataclysm:
+  Cooldown: 600
+  Skills:
+  - onSwing{osw=CatchOnFire;osw=CannonBarrage;auraname=Ignite;d=300;i=1} @self
+CatchOnFire:
+  Skills:
+  - ignite{t=60} @EntitiesInCone{angle=90;range=10;rotation=0}
+  - throw{velocity=8;velocityY=6}
+CannonBarrage:
+  - shootvolley{type=FIRE_CHARGE;velocity=4;damage=3;amount=10}
+  - Delay 10
+  - shootvolley{type=FIRE_CHARGE;velocity=4;damage=3;amount=10}
+
+LastResort:
+  Skills:
+  - orbital{onTick=LastResort-Tick;onHit=LastResort-Hit;points=20;interval=1;duration=200;charges=1}
+LastResort-Tick:
+  Skills:
+  - effect:particles{p=snowballpoof;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+LastResort-Hit:
+  Skills:
+  - damage{a=5}
+  - potion{type=SLOW;duration=100;lvl=2}

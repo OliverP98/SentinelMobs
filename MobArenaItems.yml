@@ -368,3 +368,11 @@ RumpelDagger:
   Id: GOLD_SWORD
   Enchantments:
   - SWEEPING_EDGE:2
+
+# Skull Crusher #
+
+CrushMace:
+  Id: NETHERITE_SHOVEL
+  Enchantments:
+  - KNOCKBACK:3
+  - FIRE_ASPECT:2
