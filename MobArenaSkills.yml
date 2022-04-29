@@ -273,7 +273,7 @@ MusicParalysis:
   Skills:
   - freeze {t=150} @trigger ~onAttack
 
-# Dragon Warrior #
+# Dragon Warrior (boss) #
 
 KunaiBarrage:
   Cooldown: 400
@@ -428,3 +428,44 @@ LastResort-Hit:
   Skills:
   - damage{a=5}
   - potion{type=SLOW;duration=100;lvl=2}
+
+# Cerberus #
+
+SoulCalling:
+  Cooldown: 100
+  Skills:
+  - summon{mob=SoulMinions;amount=4;noise=3} @target
+  - Delay 20
+  - summon{mob=SoulMinions;amount=4;noise=3} @target
+  - Delay 100
+  - summon{mob=SoulMinionBUFF;amount=10;noise=3;radius=10} @self
+
+SoulBomber:
+  Cooldown: 200
+  Skills:
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+
+BreathofDeath:
+  Cooldown: 300
+  Skills:
+  - shootpotion{type=POISON;duration=80;level=2;velocity=3} @target
+
+DeathCall:
+  Cooldown: 300
+  Skills:
+  - orbital{onTick=DeathCall-Tick;onHit=DeathCall-Hit;points=20;interval=1;duration=200;charges=1}
+DeathCall-Tick:
+  Skills:
+  - effect:particles{p=flame;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+DeathCall-Hit:
+  Skills:
+  - damage{a=3}
+  - potion{type=POISON;duration=100;lvl=2}

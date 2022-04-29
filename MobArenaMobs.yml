@@ -678,7 +678,7 @@ PiperRats:
     Despawn: false
     FollowRange: 50
     MaxCombatDistance: 20
-    MovementSpeed: 0.6
+    MovementSpeed: 0.5
     ShowHealth: true
   AIGoalSelectors:
   - clear
@@ -692,7 +692,7 @@ PiperRats:
 
 PiperKids:
   Type: Baby_Zombie
-  Display: 'Lost Children'
+  Display: '&cLost Children'
   Health: 40
   Damage: 3
   DamageModifiers:
@@ -755,7 +755,7 @@ DragonWarrior:
   - players
   BossBar:
     Enabled: true
-    Title: '&gThe Dragon Warrior'
+    Title: '&6The Dragon Warrior'
     Range: 80
     Color: YELLOW
     Style: segmented_12
@@ -782,9 +782,9 @@ Zeus:
     AlwaysShowName: true
     Collidable: true
     Despawn: false
-    FollowRange: 60
+    FollowRange: 50
     MaxCombatDistance: 20
-    MovementSpeed: 0.2
+    MovementSpeed: 0.1
     ShowHealth: true
   Equipment:
   - ZeusHelmet HEAD
@@ -814,6 +814,8 @@ Zeus:
   - '<target.name> was zapped by a lightning bolt!'
   - 'Zeus violently increased the voltage running through <target.name><&sq>s nervous system!'
   - '<target.name> was kicked out of Mount Olympus!'
+
+# RumpelBlockSkin (minor mob) #
 
 RumpelBlockSkin:
   Type: Baby_Zombie
@@ -863,9 +865,11 @@ RumpelBlockSkin:
   - '<target.name> forgot to read Rumpel's fineprint.'
   - '<target.name> struck a bad deal with RumpelBlockSkin'
 
+# SkullCrusher (boss) #
+
 SkullCrusher:
   Type: Vindicator
-  Display: '&gSkull Crusher'
+  Display: '&6Skull Crusher'
   Health: 350
   Damage: 4
   DamageModifiers:
@@ -881,7 +885,7 @@ SkullCrusher:
     Despawn: false
     FollowRange: 60
     MaxCombatDistance: 20
-    MovementSpeed: 0.2
+    MovementSpeed: 0.07
     ShowHealth: true
   Equipment:
   - CrushPick HAND
@@ -910,3 +914,111 @@ SkullCrusher:
   - '<target.name> was shattered by the Skull Crusher.'
   - '<target.name> thought the Skull Crusher wasn't very strong. He was mistaken.'
   - '<target.name> suffered a broken nose, and a few others, from the Skull Crusher's mace.'
+
+# Cerberus (minor enemy mob)
+
+Cerberus:
+  Type: Wolf
+  Display: '&dCerberus'
+  Health: 150
+  Damage: 2
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.3
+    ShowHealth: true
+    Glowing: true
+  Equipment:
+  - CrushPick HAND
+  Skills:
+  - skill{s=SoulCalling} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  KillMessages:
+  - '<target.name> was mauled apart by Cerberus'
+
+SoulMinions:
+  Type: Vex
+  Display: '&7Souls Of The Underworld'
+  Health: 50
+  Damage: 3
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.3
+    ShowHealth: true
+    Glowing: true
+  Skills:
+  - skill{s=SoulCalling} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+SoulMinionBUFF:
+  Type: Vex
+  Display: '&7Souls Of The Underworld'
+  Health: 80
+  Damage: 2
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+    Glowing: true
+  Skills:
+  - skill{s=SoulCalling} @self 0.5
+  - skill{s=BreathofDeath} @self 0.5
+  - skill{s=SoulBomber} @self <20% 1
+  - skill{s=DeathCall} @self <10% 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players

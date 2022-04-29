@@ -289,16 +289,16 @@ BMinion20Boots:
     Enchantments:
     - PROTECTION:1
 BMinion20Sword:
-    Id: DIAMOND_AXE
-    Data: 0
-    Amount: 1
-    Enchantments:
-    - SHARPNESS:3
-    Hide:
-    - ENCHANTS
-    Attributes:
-      MainHand:
-        AttackSpeed: 3
+  Id: DIAMOND_AXE
+  Data: 0
+  Amount: 1
+  Enchantments:
+  - SHARPNESS:3
+  Hide:
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 3
 BMinion20Shield:
     Id: SHIELD
     Data: 0
