@@ -63,7 +63,7 @@ ResManWoodSword:
   Hide:
   - ENCHANTS
 
-# Cursed Boss Mob Items
+# Cursed Knight Mob Items
 
 CursedKnightSword:
   Id: IRON_SWORD
@@ -88,11 +88,13 @@ CursedKnightChestplate:
 CursedKnightLeggings:
   Id: CHAINMAIL_LEGGINGS
   Enchantments:
-  - PROJECTILE_PROTECTION:1
+  - PROTECTION_PROJECTILE:1
 CursedKnightBoots:
   Id: CHAINMAIL_BOOTS
   Enchantments:
   - FEATHER_FALLING:1
+
+# Cursed Bishop Mob Items
 
 CursedBishopWeapon:
   Id: TRIDENT
@@ -132,6 +134,8 @@ CursedBishopBoots:
     Enchantments:
     - FEATHER_FALLING:1
 
+# Cursed Baker Mob Items
+
 CursedBakerWeapon:
   Id: pumpkin_pie
   Data: 0
@@ -151,6 +155,8 @@ CursedBakerLeggings:
     Color: WHITE
   Enchantments:
   - PROTECTION:4
+
+# Cursed Guard Mob Items
 
 CursedGuardSword:
   Id: IRON_SWORD
@@ -188,3 +194,185 @@ CursedGuardBoots:
   Id: IRON_BOOTS
   Enchantments:
   - FEATHER_FALLING:1
+
+# Cursed Butcher Mob Items
+
+CursedButcherAxe:
+  Id: DIAMOND_AXE
+  Data: 0
+  Amount: 1
+  Enchantments:
+  - SHARPNESS:3
+  Hide:
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 3
+CursedButcherHelmet:
+  Id: DIAMOND_HELMET
+  Enchantments:
+  - PROTECTION:2
+CursedButcherBoots:
+  Id: DIAMOND_BOOTS
+  Enchantments:
+  - PROTECTION:1
+  - THORNS:2
+
+# Cursed Butcher Minion Mob Items
+
+BMinion70Potion:
+  Id: potion
+  Options:
+    Color: 255,0,255
+  PotionEffects:
+    - WEAKNESS 2400 2
+    - HUNGER 1200 1
+BMinion70Helmet:
+  Id: CHAINMAIL_HELMET
+  Enchantments:
+  - PROJECTILE_PROTECTION:3
+BMinion7070Chest:
+  Id: CHAINMAIL_CHESTPLATE
+  Enchantments:
+  - PROTECTION_PROJECTILE:3
+BMinion70Leggings:
+  Id: CHAINMAIL_LEGGINGS
+  Enchantments:
+  - PROTECTION:2
+BMinion70Boots:
+    Id: CHAINMAIL_BOOTS
+    Enchantments:
+    - PROTECTION:2
+
+BMinion45Helmet:
+  Id: CHAINMAIL_HELMET
+  Enchantments:
+  - PROTECTION:2
+BMinion45Chest:
+  Id: CHAINMAIL_CHESTPLATE
+  Enchantments:
+  - PROTECTION_PROJECTILE:2
+BMinion45Leggings:
+  Id: CHAINMAIL_LEGGINGS
+  Enchantments:
+  - PROTECTION:1
+BMinion45Boots:
+    Id: CHAINMAIL_BOOTS
+    Enchantments:
+    - PROTECTION:1
+BMinion45Sword:
+    Id: DIAMOND_AXE
+    Data: 0
+    Amount: 1
+    Enchantments:
+    - SHARPNESS:3
+    Hide:
+    - ENCHANTS
+    Attributes:
+      MainHand:
+        AttackSpeed: 3
+
+BMinion20Helmet:
+  Id: GOLD_HELMET
+  Enchantments:
+  - PROTECTION:1
+BMinion20Chest:
+  Id: GOLD_CHESTPLATE
+  Enchantments:
+  - PROTECTION:1
+BMinion20Leggings:
+  Id: GOLD_LEGGINGS
+  Enchantments:
+  - PROTECTION:1
+BMinion20Boots:
+    Id: GOLD_BOOTS
+    Enchantments:
+    - PROTECTION:1
+BMinion20Sword:
+  Id: DIAMOND_AXE
+  Data: 0
+  Amount: 1
+  Enchantments:
+  - SHARPNESS:3
+  Hide:
+  - ENCHANTS
+  Attributes:
+    MainHand:
+      AttackSpeed: 3
+BMinion20Shield:
+    Id: SHIELD
+    Data: 0
+    Amount: 1
+    Display: ''
+    Attributes:
+      OffHand:
+        Armor: 4
+
+# Piper Armour #
+
+PiperHelmet:
+  Id: GOLD_HELMET
+  Enchantments:
+  - PROTECTION:2
+PiperChest:
+  Id: GOLD_CHESTPLATE
+  Enchantments:
+  - PROTECTION:2
+PiperLeggings:
+  Id: GOLD_LEGGINGS
+  Enchantments:
+  - PROTECTION:2
+PiperBoots:
+  Id: GOLD_BOOTS
+  Enchantments:
+  - PROTECTION:2
+PiperFlute:
+  Id: BLAZE_ROD
+  Enchantments:
+  - KNOCKBACK:3
+  - SHARPNESS:5
+  - FIRE_ASPECT:2
+
+# Zeus Items #
+
+ZeusHelmet:
+  Id: DIAMOND_HELMET
+  Enchantments:
+  - PROTECTION:2
+  - THORNS:1
+ZeusTrident:
+  Id: IRON_SWORD
+  Enchantment:
+  - SHARPNESS:2
+
+# Rumpel Items #
+
+RumpelHelm:
+  Id: GOLD_HELMET
+  Enchantments:
+  - PROTECTION:2
+RumpelChest:
+  Id: GOLD_CHESTPLATE
+  Enchantments:
+  - PROTECTION:2
+RumpelLegs:
+  Id: GOLD_LEGGINGS
+  Enchantments:
+  - PROTECTION:2
+RumpelBoots:
+  Id: GOLD_BOOTS
+  Enchantments:
+  - PROTECTION:2
+  - DEPTH_STRIDER:2
+RumpelDagger:
+  Id: GOLD_SWORD
+  Enchantments:
+  - SWEEPING_EDGE:2
+
+# Skull Crusher #
+
+CrushMace:
+  Id: NETHERITE_SHOVEL
+  Enchantments:
+  - KNOCKBACK:3
+  - FIRE_ASPECT:2

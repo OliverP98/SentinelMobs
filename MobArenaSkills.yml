@@ -194,3 +194,278 @@ BreadMissle_HIT:
 CursedCakeMine:
   Skills:
     - setblock{material=tnt;md=1} @selflocation
+
+### Cursed Butcher Skills ###
+ButcherMount:
+  Cooldown: 1200
+  Skills:
+  - mount{type=ButcherMount}
+CursedBlind:
+  Cooldown: 200
+  Skills:
+  - potion{type=blindness;lvl=1;duration=4} @target
+FoodSteal:
+  Cooldown: 600
+  Skills:
+  - takeitem{i=STEAK:a=8} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_CHICKEN} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_MUTTON} @NearestPlayer{r=25}
+ButcherMinion70:
+  Cooldown: 2000
+  Skills:
+  - message{m="<mob.name><&co> &e*Sinister stomach rumbling*"} @PlayersInRadius{r=25}
+  - summon{mob=ButcherMinion70;amount=2;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion70;amount=2;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion70;amount=1;noise=4} @self
+ButcherMinion45:
+  Cooldown: 1900
+  Skills:
+  - message{m="<mob.name><&co> &6*I'm getting really hungry; finish this quickly!"} @PlayersInRadius{r=25}
+  - summon{mob=ButcherMinion45;amount=3;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion45;amount=3;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion45;amount=2;noise=4} @self
+ButcherMinion20:
+  Cooldown: 1800
+  Skills:
+  - message{m="<mob.name><&co> &cYou made me miss my lunch break! I'm gonna turn you into sirloin steak!"} @PlayersInRadius{r=25}
+  - summon{mob=ButcherMinion20;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion20;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=ButcherMinion20;amount=5;noise=4} @self
+
+## Butcher Potion Skills ##
+
+FeeblePotion:
+  Cooldown: 50
+  Skills:
+  - shootpotion{type=WEAKNESS;duration=2400;level=2;v=7} @target
+
+StarvationPotion:
+  Cooldown: 200
+  Skills:
+  - shootpotion{type=HUNGER;duration=1200;level=3;v=6} @target
+
+# Piper Skills #
+
+PiperRats:
+  Cooldown: 600
+  Skills:
+  - summon{mob=PiperRats;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=PiperRats;amount=5;noise=4} @self
+  - Delay 10
+  - summon{mob=PiperRats;amount=5;noise=4} @self
+
+PiperKids:
+  Cooldown: 500
+  Skills:
+  - summon{mob=PiperRats;amount=4;noise=4} @self
+  - Delay 10
+  - summon{mob=PiperRats;amount=4;noise=4} @self
+
+MusicParalysis:
+  Cooldown: 1500
+  Skills:
+  - freeze {t=150} @trigger ~onAttack
+
+# Dragon Warrior (boss) #
+
+KunaiBarrage:
+  Cooldown: 400
+  Skills:
+  - shoot{t=TRIDENT;v=10;damage=15;knockback=1;accuracy=3;oh=BurstKunai;bounce=true}
+  - Delay 30
+  - arrowvolley{a=50;s=200;v=10;f=30;rd=200} @target
+
+BurstKunai:
+  Cooldown: 300
+  Skills:
+  - missile{ot=BurstKunai_TICK;oh=BurstKunai_HIT;v=4;i=1;hR=1;vR=1;in=0.75}
+
+BurstKunai_TICK:
+  Skills:
+  - effect:particles{p=flame;a=5} @origin
+
+BurstKunai_HIT:
+  Skills:
+  - effect:particles{p=lava;a=50;hS=1;vS=1}
+  - effect:sound{s=entity.generic.explode;v=1;p=0}
+  - damage{a=1337;i=false}
+
+SwapPos:
+  Cooldown: 900
+  Skills:
+  - message{m="<mob.name><&co> &gToo sneaky for you!"} @PlayersInRadius{r=25}
+  - swap @target
+  - effect:smoke @target ~onTimer:10
+  - effect:smoke{direction=2} @self ~onAttack
+
+PoLunge:
+  Cooldown: 500
+  Skills:
+  - message{m="<mob.name><&co> &gFists of fury!"} @PlayersInRadius{r=15}
+  - lunge{velocity=15;velocityY=10} @Self
+
+# Zeus Skills (Boss) #
+
+Lightningbolt:
+  Cooldown: 600
+  Skills:
+  - arrowvolley{a=100;s=5;v=25;f=60;rd=200} @target
+
+LightningStrike:
+  Cooldown: 600
+  Skills:
+  - lightning{d=6} @EntitiesInRadius{r=20}
+  - effect:smoke @target ~onTimer:10
+
+LightningParalysis:
+  Cooldown: 500
+  Skills:
+  - lightning{d=3} @EntitiesInRadius{r=20}
+  - freeze {t=100} @EntitiesInRadius{r=20}
+
+StaticPull:
+  Cooldown: 300
+  Skills:
+  - effect:glow{color=AQUA;duration=100}
+  - Delay 80
+  - forcepull{spread=5} @target
+  - Delay 10
+  - ignite{ticks=100} @trigger ~onAttack
+
+StaticLevitate:
+  Cooldown: 800
+  Skills:
+  - potion{type=LEVITATION;d=100;level=4}
+  - Delay 100
+  - damage{amount=4}
+
+# Rumpel Skills #
+
+TantrumThrow:
+  Cooldown: 200
+  Skills:
+  - effect:explosion @Self
+  - damage{amount=10} @PlayersInRadius{r=5}
+  - throw{velocity=15;velocityY=5} @PlayersInRadius{r=5}
+
+Pickpocket:
+  Cooldown: 300
+  Skills:
+  - takeitem{i=STEAK;a=8} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_CHICKEN;a=3} @NearestPlayer{r=25}
+  - takeitem{i=COOKED_MUTTON;a=3} @NearestPlayer{r=25}
+
+# Skull Crusher (Boss) #
+
+SuperShockslam:
+  Cooldown: 500
+  Skills:
+  - jump{v=10}
+  - Delay 20
+  - throw{velocity=8;velocityY=6} @PIR{r=10}
+  - damage{a=30;i=false} @PIR{r=10}
+  - effect:particles{p=hugeexplode;a=5;vs=0.5;hs=0.5;s=0;y=1} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=0.5} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=1;repeat=7;repeatInterval=2} @Self
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=1} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=3} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=5} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=7} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=9} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=11} @Self
+
+LightningSurge:
+  Cooldown: 200
+  Skills:
+  - lightning{d=10} @target
+  - effect:particles{p=hugeexplode;a=5;vs=0.5;hs=0.5;s=0;y=1} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=0.5} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=1;repeat=7;repeatInterval=2} @Self
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=1} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=3} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=5} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=7} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=9} @target
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=11} @target
+
+Cataclysm:
+  Cooldown: 600
+  Skills:
+  - onSwing{osw=CatchOnFire;osw=CannonBarrage;auraname=Ignite;d=300;i=1} @self
+CatchOnFire:
+  Skills:
+  - ignite{t=60} @EntitiesInCone{angle=90;range=10;rotation=0}
+  - throw{velocity=8;velocityY=6}
+CannonBarrage:
+  - shootvolley{type=FIRE_CHARGE;velocity=4;damage=3;amount=10}
+  - Delay 10
+  - shootvolley{type=FIRE_CHARGE;velocity=4;damage=3;amount=10}
+
+LastResort:
+  Skills:
+  - orbital{onTick=LastResort-Tick;onHit=LastResort-Hit;points=20;interval=1;duration=200;charges=1}
+LastResort-Tick:
+  Skills:
+  - effect:particles{p=snowballpoof;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+LastResort-Hit:
+  Skills:
+  - damage{a=5}
+  - potion{type=SLOW;duration=100;lvl=2}
+
+# Cerberus #
+
+SoulCalling:
+  Cooldown: 100
+  Skills:
+  - summon{mob=SoulMinions;amount=4;noise=3} @target
+  - Delay 20
+  - summon{mob=SoulMinions;amount=4;noise=3} @target
+  - Delay 100
+  - summon{mob=SoulMinionBUFF;amount=10;noise=3;radius=10} @self
+
+SoulBomber:
+  Cooldown: 200
+  Skills:
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+  - Delay 30
+  - shootskull{y=2;v=6} @target
+
+BreathofDeath:
+  Cooldown: 300
+  Skills:
+  - shootpotion{type=POISON;duration=80;level=2;velocity=3} @target
+
+DeathCall:
+  Cooldown: 300
+  Skills:
+  - orbital{onTick=DeathCall-Tick;onHit=DeathCall-Hit;points=20;interval=1;duration=200;charges=1}
+DeathCall-Tick:
+  Skills:
+  - effect:particles{p=flame;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+DeathCall-Hit:
+  Skills:
+  - damage{a=3}
+  - potion{type=POISON;duration=100;lvl=2}

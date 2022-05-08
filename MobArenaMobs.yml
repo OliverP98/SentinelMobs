@@ -204,6 +204,10 @@ ResManZVillagerWoodenSword:
   - clear
   - players
   - attacker
+  KillMessages:
+  - 'The Resurrection Man refused to resurrect <target.name>'
+  - '<target.name> was swarmed by the hordes of the undead'
+
 
 #Cursed Boss Mobs
 
@@ -254,6 +258,7 @@ CursedKnight:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by The Cursed Knight!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - '<target.name><&sq>s life flashed before his eyes at the hands of the Cursed Knight'
 
 CursedBishop:
   Type: WITHER_SKELETON
@@ -302,6 +307,10 @@ CursedBishop:
     Style: segmented_12
   KillMessages:
   - '<target.name> was defeated by The Cursed Bishop!' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - '<target.name> fell victim to the Cursed Bishop's prayers'
+  - 'The Cursed Bishop's speech on doctrine was too much for <target.name>''
+  - '<target.name> did not go to Mass'
+
 CursedBaker:
   Type: Zombie
   Display: '&4Cursed Baker'
@@ -346,7 +355,9 @@ CursedBaker:
     Color: Orange
     Style: segmented_12
   KillMessages:
-  - '<target.name> had their soul completely devoured' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - '<target.name> was pummelled by stale sour-dough' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - 'The Baker's croissants held too much butter for <target.name>'
+  - '<target.name> devoured bad bread and fell in battle'
 
 CursedGuard:
   Type: WITHER_SKELETON
@@ -394,9 +405,9 @@ CursedGuard:
     Color: WHITE
     Style: segmented_12
   KillMessages:
-  - '<target.name><&sq>s soul was feasted upon by Soul Eater' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
-
-#Cursed Boss Minions
+  - '<target.name><&sq>s attack was foiled by a Cursed Guard' #New kill messages need to be created, and multiple could be used to make it feel more unique for replayability
+  - '<target.name> was made an example of by a Cursed Guard'
+  - '<target.name> was kicked out of the living world by a Cursed Guard'
 
 CursedMonk:
   Type: Zombie
@@ -422,6 +433,586 @@ CursedMonk:
   - CursedBishopLeggings LEGS
   - CursedBishopBoots FEET
   - CursedBishopWeapon HAND
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+# Cursed Butcher (Boss) #
+
+CursedButcher:
+  Type: Husk
+  Display: '&6Cursed Butcher'
+  Health: 350
+  Damage: 4
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 40
+    MovementSpeed: 0.25
+    ShowHealth: true
+  Equipment:
+  - CursedButcherAxe HAND
+  - CursedButcherHelmet HEAD
+  - CursedButcherBoots FEET
+  Skills:
+  - skill{s=ButcherMount} @self 0.5
+  - skill{s=StarvationPotion} @self 0.5
+  - skill{s=CursedBlind} @self 0.5
+  - skill{s=FoodSteal} @self 0.5
+  - skill{s=ButcherMinion70} @self <70% 1
+  - skill{s=ButcherMinion45} @self <45% 1
+  - skill{s=ButcherMinion20} @self <20% 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&6Cursed Butcher'
+    Range: 80
+    Color: RED
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was cleaved by the Cursed Butcher!'
+  - '<target.name><&sq>s sorry corpse was put on display by the Cursed Butcher!'
+  - '<target.name> realised that the Cursed Butcher was very good at his job!'
+
+ButcherMinion70:
+  Type: Zombie
+  Display: '&aASDA'
+  Health: 30
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - BMinion70Potion HAND
+  - BMinion70Helmet HEAD
+  - BMinion70Chest CHES
+  - BMinion70Leggings LEGS
+  - BMinion70Boots FEET
+  Skills:
+  - skill{s=FeeblePotion}
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+ButcherMinion45:
+  Type: Zombie
+  Display: '&gMorrisons'
+  Health: 40
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - BMinion45Sword HAND
+  - BMinion45Helmet HEAD
+  - BMinion45Chest CHEST
+  - BMinion45Leggings LEGS
+  - BMinion45Boots FEET
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+ButcherMinion20:
+  Type: Zombie
+  Display: '&cTESCO'
+  Health: 50
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - BMinion20Sword HAND
+  - BMinion20Shield OffHAND
+  - BMinion20Helmet HEAD
+  - BMinion20Chest CHEST
+  - BMinion20Leggings LEGS
+  - BMinion20Boots FEET
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+ButcherMount:
+    Type: Zombie_Horse
+    Health: 50
+    Damage: 2
+    DamageModifiers:
+    - FIRE 0
+    - HOT_FLOOR 0
+    - FIRE_TICK 0
+    - MAGIC 0
+    Options:
+      Collidable: true
+      Despawn: false
+      FollowRange: 30
+      MaxCombatDistance: 20
+      MovementSpeed: 0.3
+      ShowHealth: false
+    AIGoalSelectors:
+    - clear
+    - breakdoors
+    AITargetSelectors:
+    - clear
+    - attacker
+
+# Cursed Piper (minor enemy mob) #
+
+CursedPiper:
+  Type: Stray
+  Display: '&cCursed Piper'
+  Health: 150
+  Damage: 5
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - PiperFlute HAND
+  - PiperHelmet HEAD
+  - PiperChest CHEST
+  - PiperLeggings LEGS
+  - PiperBoots FEET
+  Skills:
+  - skill{s=PiperRats} @self <80% 1
+  - skill{s=PiperKids} @self <60% 1
+  - skill{s=MusicParalysis} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  KillMessages:
+  - '<target.name> was serenaded by the Piper's blissful tunes!'
+  - '<target.name> fell under the Piper's magic spell!'
+
+PiperRats:
+  Type: Endermite
+  Health: 20
+  Damage: 2
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 50
+    MaxCombatDistance: 20
+    MovementSpeed: 0.5
+    ShowHealth: true
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+PiperKids:
+  Type: Baby_Zombie
+  Display: '&cLost Children'
+  Health: 40
+  Damage: 3
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 50
+    MaxCombatDistance: 20
+    ShowHealth: true
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+# Dragon Warrior (Boss) #
+
+DragonWarrior:
+  Type: Panda
+  Display: '&cThe Dragon Warrior'
+  Health: 400
+  Damage: 5
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 1
+  - STARVATION 1
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.3
+    ShowHealth: true
+  Skills:
+  - skill{s=KunaiBarrage} @self <10% 1
+  - skill{s=BurstKunai} @target ~onTimer:100 <20% 1
+  - skill{s=SwapPos} @self <50% 1
+  - skill{s=PoLunge} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&6The Dragon Warrior'
+    Range: 80
+    Color: YELLOW
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was turned into a dumpling and eaten by the Dragon Warrior!'
+  - '<target.name> was sat on and squashed by the Dragon Warrior!'
+  - '<target.name> was banished to the spirit realm by the Dragon Warrior!'
+
+# Zeus (Boss)
+
+Zeus:
+  Type: Iron_Golem
+  Display: '&bZeus'
+  Health: 350
+  Damage: 3
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 1
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 50
+    MaxCombatDistance: 20
+    MovementSpeed: 0.1
+    ShowHealth: true
+  Equipment:
+  - ZeusHelmet HEAD
+  - ZeusTrident HAND
+  Skills:
+  - skill{s=Lightningbolt} @self 0.5
+  - skill{s=LightningStrike} @self 0.5
+  - skill{s=LightningParalysis} @self <50% 1
+  - skill{s=StaticPull} @self 0.5
+  - skill{s=StaticLevitate} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&bZeus'
+    Range: 100
+    Color: AQUA
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> was zapped by a lightning bolt!'
+  - 'Zeus violently increased the voltage running through <target.name><&sq>s nervous system!'
+  - '<target.name> was kicked out of Mount Olympus!'
+
+# RumpelBlockSkin (minor mob) #
+
+RumpelBlockSkin:
+  Type: Baby_Zombie
+  Display: '&cRumpel BlockSkin'
+  Health: 175
+  Damage: 1
+  DamageModifiers:
+  - FIRE 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+  Equipment:
+  - RumpelHelm HEAD
+  - RumpelChestplate CHEST
+  - RumpelLegs LEGS
+  - RumpelBoots FEET
+  - RumpelDagger HAND
+  Skills:
+  - skill{s=TantrumThrow} @self 0.5
+  - skill{s=Pickpocket} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&cRumpelBlockSkin'
+    Range: 100
+    Color: AQUA
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> forgot to read Rumpel's fineprint.'
+  - '<target.name> struck a bad deal with RumpelBlockSkin'
+
+# SkullCrusher (boss) #
+
+SkullCrusher:
+  Type: Vindicator
+  Display: '&6Skull Crusher'
+  Health: 350
+  Damage: 4
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 60
+    MaxCombatDistance: 20
+    MovementSpeed: 0.07
+    ShowHealth: true
+  Equipment:
+  - CrushPick HAND
+  Skills:
+  - skill{s=SuperShockslam} @self 0.5
+  - skill{s=LightningSurge} @self 0.5
+  - skill{s=Cataclysm} @self <75% 1
+  - skill{s=LastResort} @self <20% 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  BossBar:
+    Enabled: true
+    Title: '&cSkull Crusher'
+    Range: 100
+    Color: YELLOW
+    Style: segmented_12
+  KillMessages:
+  - '<target.name> had their head lobbed off by the Skull Crusher.'
+  - '<target.name> was shattered by the Skull Crusher.'
+  - '<target.name> thought the Skull Crusher wasn't very strong. He was mistaken.'
+  - '<target.name> suffered a broken nose, and a few others, from the Skull Crusher's mace.'
+
+# Cerberus (minor enemy mob)
+
+Cerberus:
+  Type: Wolf
+  Display: '&dCerberus'
+  Health: 150
+  Damage: 2
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.3
+    ShowHealth: true
+    Glowing: true
+  Equipment:
+  - CrushPick HAND
+  Skills:
+  - skill{s=SoulCalling} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  KillMessages:
+  - '<target.name> was mauled apart by Cerberus'
+
+SoulMinions:
+  Type: Vex
+  Display: '&7Souls Of The Underworld'
+  Health: 50
+  Damage: 3
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.3
+    ShowHealth: true
+    Glowing: true
+  Skills:
+  - skill{s=SoulCalling} @self 0.5
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  - breakdoors
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+
+SoulMinionBUFF:
+  Type: Vex
+  Display: '&7Souls Of The Underworld'
+  Health: 80
+  Damage: 2
+  DamageModifiers:
+  - FIRE 1
+  - HOT_FLOOR 1
+  - FIRE_TICK 0
+  - MAGIC 0
+  - FALL 0
+  - STARVATION 0
+  Options:
+    AlwaysShowName: true
+    Collidable: true
+    Despawn: false
+    FollowRange: 30
+    MaxCombatDistance: 20
+    MovementSpeed: 0.2
+    ShowHealth: true
+    Glowing: true
+  Skills:
+  - skill{s=SoulCalling} @self 0.5
+  - skill{s=BreathofDeath} @self 0.5
+  - skill{s=SoulBomber} @self <20% 1
+  - skill{s=DeathCall} @self <10% 1
   AIGoalSelectors:
   - clear
   - meleeattack
